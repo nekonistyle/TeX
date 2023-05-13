@@ -1,0 +1,39 @@
+\documentclass[twocolumn]{jsarticle}
+
+\usepackage{../mypreamble_coq}
+
+\begin{document}
+
+\begin{lstlisting}
+From mathcomp
+	Require Import all_ssreflect.
+
+Add LoadPath "../mylib"
+Require Export mylib.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defencive.
+
+(* ************************ *)
+Module test.
+
+	Coercion
+	Canonical
+
+	Type Prop Set
+
+	Lemma aaaa.
+	Proof.
+		move : x =>->.
+		case elim congr constructor
+		first by
+		last exact
+	Qed.
+
+	forall exists <- <-> <> <= /\ \/ \o
+
+End test.
+\end{lstlisting}
+
+\end{document}
