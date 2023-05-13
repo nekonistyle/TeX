@@ -1,0 +1,73 @@
+%%%%%%%%
+\usepackage{listings} %プログラムの記述
+\usepackage{color}
+
+%%%%%%%%%%
+%Coqの書式設定
+%%%%%%%%%%
+
+%\newenvironment{CoqCode}{\begin{lstlisting}}{\end{lstlisting}}
+\newcommand\inCoq[1]{\lstinline{#1}}
+
+%%%%%%%%%%
+
+\definecolor{Coqviolet}{rgb}{0.6, 0, 0.65}
+\definecolor{Coqgreen}{rgb}{0, 0.6, 0}
+\definecolor{Coqblue}{rgb}{0.1, 0, 0.8}
+\definecolor{Coqred}{rgb}{0.9, 0, 0}
+\definecolor{Coqpink}{rgb}{0.8, 0.3, 0.7}
+\definecolor{Coqdarkred}{rgb}{0.6, 0, 0}
+
+\lstdefinelanguage{Coq}{
+	morekeywords = [0]{
+		Module, Section, End,
+		Record, Structure,
+		Variable, Variables, Hypothesis, Axiom, Let,
+		Notation, Definition, Inductive, Fixpoint, Function, Program,
+		Coercion, Canonical,
+		Lemma, Theorem, Goal, Proof, Qed, Defined,
+		From, Require, Import, Export,
+		Add, LoadPath, Implicit, Arguments, Unset, Strict, Printing, Defencive
+	},
+	morekeywords = [1]{
+		match, with, end, Set, Prop, Type, fun, ffun, of, let, return, in, if, is, then, else, forall
+	},
+	morekeywords = [2]{
+		move, case, elim, rewrite, apply, split, congr, exists, have, suff, pose, wlog, constructor,
+		left, right
+	},
+	morekeywords = [3]{
+		exact, by, done
+	},
+	morekeywords = [4]{
+		first, last, try, do
+	},
+	morecomment = [s]{(*}{*)},
+	morestring = [b]{"}
+}
+
+\lstset{
+	language = Coq,
+	basicstyle = {\ttfamily},
+	keywordstyle = [0]{\color{Coqviolet}},
+	keywordstyle = [1]{\color{Coqgreen}},
+	keywordstyle = [2]{\color{Coqblue}},
+	keywordstyle = [3]{\color{Coqred}},
+	keywordstyle = [4]{\color{Coqpink}},
+	commentstyle = {\color{Coqdarkred}},
+	tabsize = 2,
+	frame = single,
+	literate =
+		{forall}{$\forall$}1
+		{exists}{$\exists$}1
+		{->}{$\rightarrow{}$}1
+		{=>}{$\Rightarrow{}$}1
+		{<-}{$\leftarrow{}$}1
+		{<->}{$\leftrightarrow{}$}1
+		{<>}{$\neq{}$}1
+		{<=}{$\leq{}$}1
+		{/\\}{$\wedge{}$}1
+		{\\/}{$\vee{}$}1
+		{\\o}{$\circ{}$}1
+}
+
